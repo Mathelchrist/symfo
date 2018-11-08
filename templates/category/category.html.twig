@@ -2,6 +2,11 @@
 
 {% block body %}
 
-    <a href="{{ path('category_show', {'id': category.id }) }}">{{ category.name }}</a>
+    <a href="{{ path('category_show', {'id': category.id }) }}">{{ category.name }}<br></a>
+    ------------<br>
+
+    {% for article in articles %}
+        {{ article.title }}<br>
+    {% endfor %}
 
 {% endblock %}
