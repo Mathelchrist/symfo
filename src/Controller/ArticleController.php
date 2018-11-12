@@ -24,6 +24,6 @@ class ArticleController extends AbstractController
      */
     public function show(Article $article) :Response
     {
-        return $this->render('article/article.html.twig', ['article'=>$article]);
+        return $this->render('article/article.html.twig', ['article'=>$article, 'category' => $article->getCategory()]);
     }
 }
