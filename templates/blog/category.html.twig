@@ -8,6 +8,7 @@
 
     <div>
         <h1>Category : {{ category.name }}</h1>
+
         {% for article in category.articles|reverse|slice(0,3) %}
             <h2>Articles : {{ article.title }}</h2> {{ article.id }}
         {% endfor %}
