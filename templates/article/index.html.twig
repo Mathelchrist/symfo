@@ -18,4 +18,8 @@
     </ul>
 </div>
 
+    {{ form_start(form) }}
+    {{ form_row(form.category) }}
+    <button type="submit" name="btnSearch">Save</button>
+    {{ form_end(form) }}
 {% endblock %}

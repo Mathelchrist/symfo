@@ -7,7 +7,7 @@
 {% block body %}
 
     {{ form_start(form) }}
-    {{ form_row(form.searchField) }}
+    {{ form_row(form.category) }}
     <button type="submit" name="btnSearch">Rechercher</button>
     {{ form_end(form) }}
 
@@ -15,7 +15,7 @@
     <h1>All articles from article s table : </h1>
     {% for article in articles %}
         <div>
-            <h2>{{ loop.index }} / <a href="{{ path('article_show', {'id' : article.id } )}}">{{ article.title }}</a> - Category : <a href="{{ path('blog_show_category', {'category' : article.category.name}) }}"> {{ article.category.name }}</a></h2>
+            <h2>{{ loop.index }} / <a href="{{ path('article_show', {'id' : article.id } )}}">{{ article.title }}</a> - Category : <a href="{{ path('blog_show_category', {'name' : article.category.name}) }}"> {{ article.category.name }}</a></h2>
             <p>{{ article.content }}</p>
         </div>
     {% endfor %}
