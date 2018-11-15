@@ -21,10 +21,14 @@ class ArticleSearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('category', EntityType::class, [
+        $builder
+            ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
-        ]);
+            ])
+            ->add('title')
+            ->add('content')
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
