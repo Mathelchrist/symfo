@@ -17,10 +17,12 @@ class ArticleController extends AbstractController
     public function index(Request $request )
     {
         {
+            // création du formulaire
             $article = new Article();
             $form = $this->createForm(ArticleSearchType::class, $article);
-            $form->handleRequest($request);
 
+
+            $form->handleRequest($request);
             if ($form->isSubmitted()) {
 
                 $em = $this->getDoctrine()->getManager();
