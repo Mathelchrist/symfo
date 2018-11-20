@@ -2,8 +2,16 @@
 {% extends 'base.html.twig' %}
 
     {% block body %}
-        {{ category.name }}
-        <h1>{{article.title}}</h1>
+        Category : {{ category.name }}
+        <h1>Article : {{article.title}}</h1>
+        <strong>Tags :</strong>
+        <ul>
+            {% for tag in tags %}
+                <li>{{ tag.name }} </li>
+            {% else %}
+                <li>No tags for this article</li>
+            {% endfor %}
+        </ul>
         <a href="{{ path('homepage') }}">Retour à la liste</a>
 
     {% endblock %}

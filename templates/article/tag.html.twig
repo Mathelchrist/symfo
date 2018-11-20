@@ -1,0 +1,13 @@
+{# templates/blog/mon-super-article.html.twig #}
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <strong>Tags :{{ tags.name }}</strong>
+
+        {% for article in articles %}
+            <h1>{{article.title}}</h1>
+        {% endfor %}
+        <a href="{{ path('homepage') }}">Retour à la liste</a>
+
+    {% endblock %}
