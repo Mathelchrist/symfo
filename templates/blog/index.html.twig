@@ -2,26 +2,42 @@
 
 {% block title %}Index{% endblock %}
 
-{% block stylesheets %}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('article') }}">Ajouter Article</a>
-    <br>
-    <a href="{{ path('category') }}">Ajouter Category</a>
-    <br>
-    <a href="{{ path('app_lucky_number') }}">nombre aléatoire</a>
-    <br>
+    <section class="container"><a href="{{ path('article') }}">
+            <div class="btn btn-secondary offset-1">
+                Ajouter Article
+            </div>
+        </a>
 
 
+        <a href="{{ path('category') }}">
+            <div class="btn btn-secondary offset-1">Ajouter Category
+            </div>
+        </a>
 
-    <h1>All articles from article s table : </h1>
-    {% for article in articles %}
-        <div>
-            <h2>{{ loop.index }} / <a href="{{ path('blog_show', {'slug' : article.title|lower|replace({' ': "-"}) } )}}">{{ article.title }}</a> - Category : <a href="{{ path('blog_show_category', {'name' : article.category.name}) }}"> {{ article.category.name }}</a></h2>
-            <p>{{ article.content }}</p>
-        </div>
-    {% endfor %}
-    <a href="{{ path('homepage') }}">
-        Back to homepage.
-    </a>
+
+        <a href="{{ path('app_lucky_number') }}">
+            <div class="btn btn-secondary offset-1">nombre aléatoire
+       </div>
+        </a>
+
+        <br>
+
+
+        <h1>All articles from article s table : </h1>
+        {% for article in articles %}
+            <div>
+                <h2>{{ loop.index }} / <a
+                            href="{{ path('blog_show', {'slug' : article.title|lower|replace({' ': "-"}) } ) }}">{{ article.title }}</a>
+                    - Category : <a
+                            href="{{ path('blog_show_category', {'name' : article.category.name}) }}"> {{ article.category.name }}</a>
+                </h2>
+                <p>{{ article.content }}</p>
+            </div>
+        {% endfor %}
+        <a href="{{ path('homepage') }}">
+            Back to homepage.
+        </a>
+    </section>
 {% endblock %}
