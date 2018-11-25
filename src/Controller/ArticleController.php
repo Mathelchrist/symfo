@@ -21,9 +21,8 @@ class ArticleController extends AbstractController
             // création du formulaire
             $article = new Article();
             $form = $this->createForm(ArticleSearchType::class, $article);
-
-
             $form->handleRequest($request);
+
             if ($form->isSubmitted()) {
 
                 $em = $this->getDoctrine()->getManager();
@@ -32,7 +31,6 @@ class ArticleController extends AbstractController
 
             }
             return $this->render('article/index.html.twig', [
-                'controller_name' => 'CategoryController',
                 'form' => $form->createView(),
             ]);
         }

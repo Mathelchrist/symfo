@@ -16,10 +16,15 @@
             </div>
         </a>
 
+        <a href="{{ path('tag_new') }}">
+            <div class="btn btn-secondary offset-1">Ajouter Tag
+            </div>
+        </a>
+
 
         <a href="{{ path('app_lucky_number') }}">
             <div class="btn btn-secondary offset-1">nombre aléatoire
-       </div>
+            </div>
         </a>
 
         <br>
@@ -34,6 +39,11 @@
                             href="{{ path('blog_show_category', {'name' : article.category.name}) }}"> {{ article.category.name }}</a>
                 </h2>
                 <p>{{ article.content }}</p>
+
+                {% for tag in article.tags %}
+                    {{ tag.name }}
+                {% endfor %}
+
             </div>
         {% endfor %}
         <a href="{{ path('homepage') }}">
