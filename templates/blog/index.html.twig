@@ -34,11 +34,12 @@
         {% for article in articles %}
             <div>
                 <h2>{{ loop.index }} / <a
-                            href="{{ path('blog_show', {'slug' : article.title|lower|replace({' ': "-"}) } ) }}">{{ article.title }}</a>
+                            href="{{ path('blog_show', {'slug' : article.slug } ) }}">{{ article.title }}</a>
                     - Category : <a
                             href="{{ path('blog_show_category', {'name' : article.category.name}) }}"> {{ article.category.name }}</a>
                 </h2>
                 <p>{{ article.content }}</p>
+                <p><a href="{{ path('article_edit',{'id' : article.id}) }}">Modifier article</a></p>
 
                 {% for tag in article.tags %}
                     {{ tag.name }}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Modifier l'article {{ article.title }}</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.tags) }}
+
+    <button type="submit" name="btnSearch">Save</button>
+    {{ form_end(form) }}
+{% endblock %}
