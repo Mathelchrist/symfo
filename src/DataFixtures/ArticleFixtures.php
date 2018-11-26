@@ -19,15 +19,6 @@ use Faker;
 class ArticleFixtures extends Fixture implements DependentFixtureInterface
 {
 
-    const CATEGORIES = [
-        'PHP',
-        'JavaScipt',
-        'Java',
-        'Ruby',
-        'Dev0ps'
-    ];
-
-
     public function getDependencies()
     {
         return [CategoryFixtures::class];
